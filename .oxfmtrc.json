@@ -6,5 +6,13 @@
   "singleQuote": false,
   "trailingComma": "all",
   "sortImports": true,
-  "ignorePatterns": []
+  "ignorePatterns": [],
+  "overrides": [
+    {
+      "files": ["*.json", "*.yml", "*.yaml", "*.css"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
 }
