@@ -1,43 +1,53 @@
-# Website
+# Goで作る自作データベース — SQLiteに学ぶデータベース内部構造
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+SQLite を参考にしながら Go でデータベース(minidb)を自作して学ぶ本の
+リポジトリです。**Markdown 原稿(`docs/`)を唯一の正**とし、
+そこから Web サイトを生成します。
 
-## Installation
-
-```bash
-npm install
+```
+docs/   ──> Docusaurus ──> Web サイト(GitHub Pages)
 ```
 
-**Note**: feel free to use the package manager of your choice.
+## 構成
 
-## Local Development
-
-```bash
-npm run start
+```
+.
+├── docs/                  # 原稿(Markdown・これが正)
+│   └── index.md           # まえがき(第1部以降は今後の PR で追加)
+├── code/                  # 章ごとスナップショット方式
+│   ├── ch02/               # 第2章末時点の完成コード(独立 Go モジュール)
+│   ├── ch03/               # 第3章末時点の完成コード(独立 Go モジュール)
+│   └── ...                 # (今後の PR で追加)
+├── src/ / static/ ...     # Docusaurus(サイト側)
+└── .github/workflows/     # CI: フォーマット検証 / ビルド検証 / Pages デプロイ
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+## 使い方
 
-## Build
-
-```bash
-npm run build
+```sh
+bun install             # 初回のみ
+make dev                # 執筆用ローカルサーバー (http://localhost:3000)
+make web                # サイトのビルド(build/)
+make test               # 掲載コードの検証(go vet + go test)
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## 公開手順(GitHub Pages)
 
-## Deployment
+1. リポジトリの Settings → Pages → Source を「GitHub Actions」に設定
+2. Pages 設定にカスタムドメイン `godb.hirano00o.dev` を登録し、DNS で CNAME を `hirano00o.github.io` に向ける
+3. main に push すると、ビルド → サイトデプロイが自動実行される
 
-Using SSH:
+## 原稿の書き方(第2部以降)
 
-```bash
-USE_SSH=true npm run deploy
-```
+- 章ファイルを `docs/part2/ch05.md` のように追加し、`sidebars.ts` に 1 行ずつ追記する
+- コード掲載は「`**キャプション**` の直後に ` ```go ` フェンス」の形式で書く
+- 端末表示は ` ```console ` フェンス(`$ ` 始まりの行はプロンプト色になる)
+- 図・囲み(`chap-goal` / `column-note` / `sqlite-note` / `warn` / `diagram`)は
+  生 HTML で書く。`src/css/book.css` が装飾する
+- `.md` は CommonMark として解釈される設定(`markdown.format: 'detect'`)。
+  React コンポーネントを使う対話ページだけ `.mdx` にする
 
-Not using SSH:
+## 検証環境
 
-```bash
-GIT_USER=<Your GitHub username> npm run deploy
-```
-
-If you are using GitHub Pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- Go 1.26.5 / SQLite 3.53.3(公式ミラー sqlite/sqlite のソースからビルド)
+- 本文中のコード・実行結果・16進ダンプはすべて実機採取
