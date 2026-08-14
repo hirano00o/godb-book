@@ -5,7 +5,7 @@ SQLite を参考にしながら Go でデータベース(minidb)を自作して�
 そこから Web サイトを生成します。
 
 ```
-docs/   ──> Docusaurus ──> Web サイト(GitHub Pages)
+docs/   ──> Docusaurus ──> Web サイト(https://godb.hirano00o.dev)
 ```
 
 ## 構成
@@ -19,7 +19,7 @@ docs/   ──> Docusaurus ──> Web サイト(GitHub Pages)
 │   ├── ch03/               # 第3章末時点の完成コード(独立 Go モジュール)
 │   └── ...                 # (今後の PR で追加)
 ├── src/ / static/ ...     # Docusaurus(サイト側)
-└── .github/workflows/     # CI: フォーマット検証 / ビルド検証 / Pages デプロイ
+└── .github/workflows/     # CI: フォーマット検証 / ビルド検証
 ```
 
 ## 使い方
@@ -31,11 +31,10 @@ make web                # サイトのビルド(build/)
 make test               # 掲載コードの検証(go vet + go test)
 ```
 
-## 公開手順(GitHub Pages)
+## 公開
 
-1. リポジトリの Settings → Pages → Source を「GitHub Actions」に設定
-2. Pages 設定にカスタムドメイン `godb.hirano00o.dev` を登録し、DNS で CNAME を `hirano00o.github.io` に向ける
-3. main に push すると、ビルド → サイトデプロイが自動実行される
+`make web` で生成される `build/` を静的サイトとして配信する。
+配信基盤は Kubernetes クラスタを予定しており、デプロイパイプラインは別途整備する。
 
 ## 原稿の書き方(第2部以降)
 
