@@ -1,30 +1,38 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/* Docusaurus テーマ調整 + 書籍用ブロックスタイル */
+@import "./book.css";
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #1a5276;
+  --ifm-color-primary-dark: #174a6a;
+  --ifm-color-primary-darker: #164564;
+  --ifm-color-primary-darkest: #123a53;
+  --ifm-color-primary-light: #1d5a82;
+  --ifm-color-primary-lighter: #1e5f88;
+  --ifm-color-primary-lightest: #236e9e;
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgba(26, 82, 118, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #7fb2d9;
+  --ifm-color-primary-dark: #63a1d1;
+  --ifm-color-primary-darker: #559acd;
+  --ifm-color-primary-darkest: #3684bd;
+  --ifm-color-primary-light: #9bc3e1;
+  --ifm-color-primary-lighter: #a9cbe5;
+  --ifm-color-primary-lightest: #d3e5f2;
+  --docusaurus-highlighted-code-line-bg: rgba(127, 178, 217, 0.15);
+}
+
+/* ダークモードでの囲み類の視認性 */
+[data-theme="dark"] .note-title {
+  color: #9bc3e1;
+}
+[data-theme="dark"] .layer {
+  background: rgba(127, 178, 217, 0.12);
+  border-color: #7fb2d9;
+}
+[data-theme="dark"] .arrow,
+[data-theme="dark"] .figcap {
+  color: #9bc3e1;
 }
