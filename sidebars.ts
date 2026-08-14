@@ -10,6 +10,12 @@ const sidebars: SidebarsConfig = {
             collapsed: false,
             items: ["part1/ch01", "part1/ch02", "part1/ch03", "part1/ch04", "part1/afterword"],
         },
+        {
+            type: "category",
+            label: "第2部 B-Tree",
+            collapsed: false,
+            items: ["part2/ch05"],
+        },
     ],
 };
 
