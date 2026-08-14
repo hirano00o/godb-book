@@ -13,7 +13,8 @@ docs/   ──> Docusaurus ──> Web サイト(https://godb.hirano00o.dev)
 ```
 .
 ├── docs/                  # 原稿(Markdown・これが正)
-│   └── index.md           # まえがき(第1部以降は今後の PR で追加)
+│   ├── index.md           # まえがき
+│   └── part1/             # 第1部(章を執筆し次第追加)
 ├── code/                  # 章ごとスナップショット方式
 │   ├── ch02/               # 第2章末時点の完成コード(独立 Go モジュール)
 │   ├── ch03/               # 第3章末時点の完成コード(独立 Go モジュール)
