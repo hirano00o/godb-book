@@ -82,6 +82,10 @@
   color: #b8d2e6;
   opacity: 1;
 }
+.layer.ghost {
+  border-style: dashed;
+  background: transparent;
+}
 .arrow {
   text-align: center;
   color: #1a5276;

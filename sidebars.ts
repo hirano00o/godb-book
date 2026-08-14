@@ -8,7 +8,7 @@ const sidebars: SidebarsConfig = {
             type: "category",
             label: "第1部 データベースの基礎とストレージ層",
             collapsed: false,
-            items: ["part1/ch01"],
+            items: ["part1/ch01", "part1/ch02"],
         },
     ],
 };
