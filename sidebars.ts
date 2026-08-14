@@ -14,7 +14,7 @@ const sidebars: SidebarsConfig = {
             type: "category",
             label: "第2部 B-Tree",
             collapsed: false,
-            items: ["part2/ch05"],
+            items: ["part2/ch05", "part2/ch06"],
         },
     ],
 };
