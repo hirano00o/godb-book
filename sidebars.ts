@@ -16,6 +16,12 @@ const sidebars: SidebarsConfig = {
             collapsed: false,
             items: ["part2/ch05", "part2/ch06", "part2/ch07", "part2/ch08", "part2/afterword"],
         },
+        {
+            type: "category",
+            label: "第3部 SQL 実行エンジン",
+            collapsed: false,
+            items: ["part3/ch09"],
+        },
     ],
 };
 
