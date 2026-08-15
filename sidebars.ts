@@ -26,7 +26,7 @@ const sidebars: SidebarsConfig = {
             type: "category",
             label: "第4部 トランザクションと WAL",
             collapsed: false,
-            items: ["part4/ch13", "part4/ch14", "part4/ch15"],
+            items: ["part4/ch13", "part4/ch14", "part4/ch15", "part4/ch16", "part4/afterword"],
         },
     ],
 };
