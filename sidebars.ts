@@ -20,7 +20,7 @@ const sidebars: SidebarsConfig = {
             type: "category",
             label: "第3部 SQL 実行エンジン",
             collapsed: false,
-            items: ["part3/ch09", "part3/ch10"],
+            items: ["part3/ch09", "part3/ch10", "part3/ch11"],
         },
     ],
 };
